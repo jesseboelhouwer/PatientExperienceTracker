@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>PREM Survey</title>
-    <link href="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css')}}"
-          rel="stylesheet"
+    <title>Add Clinic</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/cssFile.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/buttons.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin_dashboard_page.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin-reset_password.css')}}">
 
     <style>
-
         #wrapper {
-            margin-left: auto;
-            margin-right: auto;
-            width: 1519px;
+            margin-left:auto;
+            margin-right:auto;
+            width:1519px;
         }
-
     </style>
-
 </head>
 <div id="wrapper">
+    <!-- the body has the content of the page  -->
     <body>
+    @isset($message)
+        <p class="alert alert-info" style="text-align:center; margin-left: 100px; width:94%;">{{ $message }}</p>
+    @endisset
 
-    <div style=" margin-top:1cm; margin-left:10%">
-        <h2 style="color:seagreen; text-align:center; margin-left: -50px">Survey Preview</h2>>
+    <!-- the title in the top middle of the page -->
+    <div>
+        <p class="text-center h2" style="color:seagreen; margin-top: 1cm; margin-left: 7%">Add a Clinic</p>
+
     </div>
 
 
+    <!-- The dashboard which has all the options for the admin. This dashboard is located in the side of the page-->
     <div class="msb" id="msb">
         <p class="text-center fs-2">PET</p>
 
@@ -86,8 +88,7 @@
 
 
                     <li class="nav-item">
-                        <p><a class="text-dark nav-link active" aria-current="page"
-                              href="{{ url('/editSurveySelect')}}">
+                        <p><a class="text-dark nav-link active" aria-current="page" href="{{ url('/editSurveySelect')}}">
                                 <img src="{{asset('assets/images/survey.png')}}" width="25" height="25"
                                      class="d-inline-block align-right"> Modify a Survey</a></p>
                     </li>
@@ -105,27 +106,29 @@
         </nav>
     </div>
 
-    <div style="width: 1270px; margin-left:15%; margin-top: 15px " class="shadow-lg p-3 mb-5 bg-white rounded">
-        <p class="text-center h4" style="margin-left: 10px; margin-bottom: 45px; "> {{$patient}} responses
-            to {{$surveyName}} survey on {{$date}}</p>
 
-        @foreach ($questions as $q)
-            <p class="h5" style="font-size: 18px"> {{str_replace("\/","/",$q)}}</p>
-            <p class="h6">- {{str_replace("\/","/",$answers[$loop->index])}}</p>
-
-            <br>
-            <p class="double"></p>
-        @endforeach
-
-
-    <form method="post" action="/profilereport" enctype="multipart/form-data">
+    <!-- the form where Admin can add the name of the new medication-->
+    <form method="POST" action="{{ url('/addcondition')}}">
         @csrf
-        <input type="hidden" name="inputEmail" value="{{ $email }}">
+        <div style="width: 550px; margin-left:45%; margin-top:6%">
+            <div class="mb-7 row">
+                <label for="inputFirstName" class="col-form-label" style="margin-left: 40px">Name of the
+                    condition: </label>
+                <div class="col-sm-5">
+                    <input type="text" style="width:7cm" class="form-control shadow-lg p-2 mb-3 bg-white rounded"
+                           id="condition" name="condition" required>
+                </div>
+            </div>
+        </div>
 
-        <button class="block button button1" type="submit" style="padding: 5px 10px; margin-left: 500px"><span>Back to Profile</span>
-        </button>
+        <div style="margin-left:20cm;">
+            <button class="btn btn-success btn-rounded  btn-lg " style="width: 200px; margin-top: 1cm; margin-left: -1cm"
+                    type="submit">
+                Add
+            </button>
+        </div>
     </form>
-    </div>
+
     </body>
 </div>
 </html>

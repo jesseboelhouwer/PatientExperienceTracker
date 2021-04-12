@@ -7,14 +7,16 @@
           rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/cssFile.css')}}">
-
+<!--
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    -->
     <style>
         #wrapper {
             margin-left: auto;
             margin-right: auto;
-            width: 1519px;
+            width: 1419px;
         }
+
     </style>
 </head>
 <div id="wrapper">
@@ -101,7 +103,7 @@
         </nav>
     </div>
 
-    <div style="margin-left: -3cm">
+    <div>
         <div>
             <p class="text-center h2" style="color:seagreen; margin-top: 20px;margin-top: 1cm; margin-left: 4cm">Survey
                 Selection</p>

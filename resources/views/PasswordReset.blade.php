@@ -86,10 +86,7 @@
             <p class="text-center h2 style=" style="color:seagreen;margin-left: 3.5cm">Password Reset Requests</p>
 
             @if (count($patients) > 0)
-                <p class="text-center h6" style="text-align:center;margin-left: 3cm;margin-top:1cm">Selecting the green
-                    check marks will
-                    approve password reset requests.
-                    <br>Users will receive the confirmation and a temporary password via email.</p>
+                <p class="text-center h6" style="text-align:center;margin-left: 3cm;margin-top:1cm">Selecting the green check marks will approve password reset requests.</p>
             @endif
             <br>
             <br>
@@ -177,6 +174,7 @@
         <br>
         <!-- list of password reset requests-->
 
+        <div style="position:absolute; top:220px">
 
         <ol class="lp" style="margin-top: -.4cm">
             @foreach ($patients as $p)
@@ -186,13 +184,14 @@
             @endforeach
         </ol>
 
+    </div>
         <div style="margin-left: 300px; position:absolute; top:220px">
 
             <!-- If there are no password reset requests, then don't print a list -->
             @if (count($patients) > 0)
 
                 <form name="acceptanceForm" method="POST" action="{{ url('/resetreview/store')}}"
-                      enctype="multipart/form-data" class="lp" style="margin-right: 2cm">
+                      enctype="multipart/form-data" class="lp" style="margin-right: 2cm; margin-top: -36px">
                     @csrf
                     <ol class="lp">
                         @foreach ($patients as $p)
@@ -221,7 +220,7 @@
 
             @else
                 {{--                <h5 style="margin-left: 277px; color: red">There are no password reset requests </h5>--}}
-                <div class="alert" style="margin-left: 8.8cm ">
+                <div class="alert" style="margin-left: 10.3cm ">
                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
                     <strong> There are no password reset requests </strong>
                 </div>

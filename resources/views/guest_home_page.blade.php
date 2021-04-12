@@ -8,8 +8,9 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin_dashboard_page.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin-reset_password.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/buttons.css')}}">
-
+   <!--
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    -->
     <!--Get your own code at fontawesome.com
         Here is the link to find all the important icons
     https://www.w3schools.com/icons/icons_reference.asp
@@ -36,11 +37,11 @@
             <p class="text-center h1" style="color:seagreen;margin-left: 4cm; margin-top: 2%">Welcome to the Patient
                 Experience Tracker </p>
 
-            <p class="text-center h4" style="margin-left: 4cm;margin-top: 5%; text-align:center">Please select from one
+            <p class="text-center h4" style="margin-left: 4cm;margin-top: 5%; text-align:center">Please select one
                 of the options below </p>
 
 
-            <!-- The dashboard options in the centere of the page-->
+            <!-- The dashboard options in the center of the page-->
             <div style="margin-left: -55px">
                 <ul class="lp">
 

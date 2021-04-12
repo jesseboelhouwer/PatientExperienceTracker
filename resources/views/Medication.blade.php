@@ -19,12 +19,12 @@
 <!-- the body has the content of the page  -->
 <body>
 @isset($message)
-    <p class="alert alert-info" style="text-align:center">{{ $message }}</p>
+    <p class="alert alert-info" style="text-align:center; width:93.9%; margin-left: 100px">{{ $message }}</p>
 @endisset
 
 <!-- the title in the top middle of the page -->
 <div>
-    <p class="text-center h2" style="color:seagreen; margin-top: 1cm; margin-left: 7%">Adding a Medication</p>
+    <p class="text-center h2" style="color:seagreen; margin-top: 1cm; margin-left: 7%">Add a Medication</p>
 
 </div>
 
@@ -116,7 +116,7 @@
                 medication: </label>
             <div class="col-sm-5">
                 <input type="text" style="width:7cm" class="form-control shadow-lg p-2 mb-3 bg-white rounded"
-                       id="medication" name="medication">
+                       id="medication" name="medication" required>
             </div>
         </div>
     </div>

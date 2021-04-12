@@ -41,7 +41,7 @@
                 </li>
                 <li class="nav-item">
                     <p><a class=" text-dark nav-link active" aria-current="page"
-                                              href="{{ url('/form/create')}}"><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Complete Survey</a></p>
+                                              href="{{ url('/surveyselection')}}"><img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Complete Survey</a></p>
                 </li>
                 <!-- Password Change Option-->
                 <li class="nav-item">
@@ -78,43 +78,36 @@
                             <option value="{{$option}}">{{$option}}</option>
                         </div>
                     @endforeach
-                    <br>
                 </select>
                 <br> <br>
 
             @elseif ($q["Type"]  == "Checkbox")
 
-            <div style="width:60em;overflow-x: auto;white-space: nowrap;">
-                <input class="form-check-input" type="checkbox" name="{{$q["Text"]}}[]" value="None Apply" checked>
-                <label class="form-check form-check-inline">None Apply</label>
+            <div style="width:77em;word-wrap: break-word">
+{{--                <input class="form-check-input" type="checkbox" name="{{$q["Text"]}}[]" value="Prefer not to answer" checked>--}}
+{{--                <label class="form-check form-check-inline">Prefer not to answer</label>--}}
 
                 @foreach(explode(",",$q['PossibleResponses']) as $option)
-                    <input class="form-check-input" type="checkbox" name="{{$q["Text"]}}[]" value="{{$option}}">
-                        <label class="form-check form-check-inline">{{$option}}</label>
+                        <label class="form-check form-check-inline"><input class="form-check-input" type="checkbox" name="{{$q["Text"]}}[]" value="{{$option}}"> {{$option}}</label>
 
                 @endforeach
             </div>
                 <br>
-                <br> <br>
 
             @elseif ($q["Type"]  == "RadioButtons")
 
-            <div style="width:60em;overflow-x: auto;white-space: nowrap;">
-                <input type="radio" name="{{$q["Text"]}}" value="None" checked>
-                        <label>None Apply</label>&nbsp;&nbsp;&nbsp;
+            <div style="width:77em;word-wrap: break-word">
+{{--                <input type="radio" name="{{$q["Text"]}}" value="Prefer not to answer" checked>--}}
+{{--                        <label>Prefer not to answer</label>&nbsp;&nbsp;&nbsp;--}}
                 @foreach(explode(",",$q['PossibleResponses']) as $option)
-                    <input type="radio" name="{{$q["Text"]}}" value="{{$option}}">
-                        <label>{{$option}}</label>&nbsp;&nbsp;&nbsp;
+                        <label><input type="radio" name="{{$q["Text"]}}" value="{{$option}}"> {{$option}}</label>&nbsp;&nbsp;&nbsp;
                 @endforeach
             </div>
-
                 <br>
-                <br> <br>
 
             @elseif ($q["Type"]  == "Text")
-                    <input type="text" name="{{$q["Text"]}}"><br>
+                    <input type="text" name="{{$q["Text"]}}">
                 <br>
-                <br> <br>
 
             @elseif ($q["Type"]  == "FreeText")
                 <div class="mb-3">
@@ -122,7 +115,7 @@
                         <textarea class="form-control" name="{{$q["Text"]}}" rows="3" cols="300"></textarea>
                     </div>
                 </div>
-                <br> <br>
+                <br>
 
             @endif
             <p class="double"></p>

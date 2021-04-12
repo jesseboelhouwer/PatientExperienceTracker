@@ -16,8 +16,9 @@
             width: 1519px;
         }
     </style>
-
+    <!--
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    -->
 
 </head>
 <div id="wrapper">
@@ -74,13 +75,13 @@
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-group form-inline">Email address</label>
                     <input type="email" class="form-control shadow-lg p-3 mb-5 bg-white rounded"
-                           id="email" aria-describedby="emailHelp" name = "email">
+                           id="email" aria-describedby="emailHelp" name = "email" required>
                 </div>
                     <!-- box for password-->
                     <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-group form-inline">Password</label>
                     <input type="password" class="form-control shadow-lg p-3 mb-5 bg-white rounded"
-                           id="password" name = "password">
+                           id="password" name = "password" required>
                         <!-- the paragraph under password if the admin forgot their passwords-->
                         <p class=" text-center h6">Having trouble remembering your password?</p>
                     <p class="text-center h6">Click <a href="{{url('/patientreset')}}">here</a> to reset your password.

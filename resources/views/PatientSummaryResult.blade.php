@@ -154,14 +154,12 @@
                 <!-- the text box and the label n the card -->
                 <div class="card-body shadow-lg p-3 mb-5 bg-body rounded2">
                     <div class="mb-1 row">
-                        <label for="inputLastName" class="col-sm-4 col-form-label "
-                               style="margin-top:0.3cm;">Weight:</label>
+                        <label for="inputLastName" class="col-sm-5 col-form-label "
+                               style="margin-top:0.3cm;">Weight (lb):</label>
                         <!-- text box -->
                         <div class="col-sm-3">
-                            <h2 type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 250%;"
+                            <h2 type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 150%;"
                                 id="exampleFormControlInput4">{{$Summary['Weight']}}</h2>
-                            <label for="inputLastName" class="col-sm-4 col-form-label "
-                                   style="margin-top:0.3cm;">Pounds:</label>
                         </div>
                     </div>
                 </div>
@@ -180,14 +178,13 @@
                 <!-- the two text boxes and the label n the card -->
                 <div class="shadow-lg p-3 mb-5 bg-body rounded card-body">
                     <div class="mb-1 row">
-                        <label for="inputLastName" class="col-sm-4 col-form-label "
-                               style="margin-top:0.3cm;">Height:</label>
+                        <label for="inputLastName" class="col-sm-6 col-form-label "
+                               style="margin-top:0.3cm;">Height (cm):</label>
 
                         <div class="col-sm-3">
                             <h2 type="text" class="form-control shadow-lg" style="margin-top:0.3cm; width: 150%;"
                                 id="exampleFormControlInput4">{{$Summary['Height']}} </h2>
-                            <label for="inputLastName" class="col-sm-4 col-form-label "
-                                   style="margin-top:0.3cm;">cm</label>
+
                         </div>
                     </div>
                 </div>
@@ -196,7 +193,7 @@
     </div>
 
     <!-- Area to show the Surveys -->
-    <div style="margin-left:15%; margin-top:50px">
+    <div style="margin-left:15%; margin-top:90px; margin-bottom: 20px">
         @isset($responses)
             <h3 style="  text-align: center; margin-left: -40%; margin-bottom: 10px">Submitted Surveys</h3>
             <table>
@@ -218,6 +215,7 @@
                                 <input type="hidden" name="responses" value="{{ json_encode($responses[$loop->index],TRUE)}}">
                                 <input type="hidden" name="name" value="{{ $names[$loop->index] }}">
                                 <input type="hidden" name="date" value="{{ $dates[$loop->index] }}">
+                                <input type="hidden" name="email" value="{{ $Summary['email'] }}">
 
                                 <button class="block button button1" type="submit" style="padding: 5px 10px"><span>View Survey</span></button>
                             </form>

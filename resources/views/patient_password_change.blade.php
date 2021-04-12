@@ -29,8 +29,7 @@
  <div >
      <p class="text-center h2" style="color:seagreen; margin-top: 20px; margin-left: 4cm">Change Password</p>
 
-     <p class="text-center h4"style="margin-left: 4cm; margin-top: .7cm; margin-bottom: 1cm">Here you can change the password on your account.</p>
-{{--     <p class="text-center h4"style="margin-left: 4cm">See password rules below</p>--}}
+     <p class="text-center h4"style="margin-left: 4cm; margin-top: .7cm; margin-bottom: 1cm">Here you can change the password of your account</p>
  </div>
 
 
@@ -42,7 +41,7 @@
              <ul class="nav flex-column" style="width:100%">
                  <!-- the Dashboard options-->
                  <!-- Dashboard option-->
-                 <li class="nav-item">
+                 <li class="nav-item" style="margin-top: 8px">
                     <p><a class=" text-dark nav-link active" aria-current="page"
                                               href="{{ url('/')}}"><img src="{{asset('assets/images/Home.png')}}" width="25" height="25" class="d-inline-block align-right"> Dashboard</a></p>
                  <!--Survey Option-->
