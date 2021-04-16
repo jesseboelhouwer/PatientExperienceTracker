@@ -72,7 +72,7 @@ class PatientProfileSummaryController extends Controller
             }
         }
 
-        $responses = DB::table('Survey_Responses');
+        $responses = DB::table('SURVEY_RESPONSES');
 
         $responses = $responses->where('Email', 'LIKE', "%" . $request->inputEmail . "%")->get();
 

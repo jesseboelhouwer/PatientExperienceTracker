@@ -62,7 +62,7 @@ class ReportController extends Controller
         //finding the patients that match the given filters
 
         //create a query to filter patients from the Patient-Profile table
-        $queryPatients = DB::table('Patient_Profile');
+        $queryPatients = DB::table('PATIENT_PROFILE');
 
         //get the selected gender option from the survey's response
         $gender = $_POST["gender"];
@@ -195,7 +195,7 @@ class ReportController extends Controller
         }
 
         //Get the responses of the patients that match the required filters
-        $query = DB::table('Survey_Responses')
+        $query = DB::table('SURVEY_RESPONSES')
             ->where('SurveyName', "LIKE", $_POST["surveyName"])
             ->wherein('Email', $finalPatients)
             ->get();
@@ -280,7 +280,7 @@ class ReportController extends Controller
             $list[] = explode("|", $row);
         }
 
-        $path = storage_path('app\\');
+        $path = storage_path('app/');        
 
         $date = new DateTime("now", new \DateTimeZone('America/Halifax'));
 

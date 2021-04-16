@@ -82,7 +82,7 @@ class SurveyController extends Controller
 
 
         //check whether the patient has already submitted the survey on the same day
-        $responses = DB::table('Survey_Responses')
+        $responses = DB::table('SURVEY_RESPONSES')
             ->where('Email', 'LIKE', Auth::guard('patient')->user()->email)
             ->where('DateCompleted', 'LIKE', date("Y-m-d"))
             ->where('SurveyName', 'LIKE', $surveyName)->count();

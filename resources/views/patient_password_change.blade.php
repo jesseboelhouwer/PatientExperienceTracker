@@ -80,7 +80,7 @@
              <label for="inputFirstName" class="col-sm-4 col-form-label">New Password: </label>
              <div class="col-sm-5">
                  <input type="password" style="width:7cm" class="form-control shadow-lg p-2 mb-3 bg-white rounded"
-                        id="password" name="password" pattern="^[A-Za-z\d@$!%*+-:,;.?&~/\()=_]{6,}$" title="Password must include at least 6 characters" required>
+                        id="password" name="password"  pattern=".{6,}" title="Password must include at least 6 characters" required>
              </div>
          </div>
          <!-- the box for new password conformation -->

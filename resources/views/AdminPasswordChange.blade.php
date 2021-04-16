@@ -116,7 +116,7 @@
         <div class="mb-7 row">
             <label for="inputFirstName" class="col-sm-4 col-form-label">New Password: </label>
             <div class="col-sm-5">
-                <input type="password" style="width:7cm" class="form-control shadow-lg p-2 mb-3 bg-white rounded"
+                <input type="password" style="width:7cm" pattern=".{6,}" class="form-control shadow-lg p-2 mb-3 bg-white rounded"
                        id="inputFirstName">
             </div>
         </div>

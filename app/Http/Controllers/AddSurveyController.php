@@ -52,7 +52,7 @@ class AddSurveyController extends Controller
         //a list of two questions to be stored as dummy questions in the new survey
         $testQuestions = array(array('Text' => 'Text for test question 1', 'Type' => 'DropDown', 'PossibleResponses' => 'Option1,Option2,Option3,Option4'));
 
-        $num = DB::table('Survey_Questions')
+        $num = DB::table('SURVEY_QUESTIONS')
             ->where('SurveyName', 'LIKE', $request->input('SurveyName'))->count();
 
 
