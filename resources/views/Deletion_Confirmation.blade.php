@@ -89,13 +89,23 @@
     </nav>
 </div>
 
+<div style="width: 1270px; margin-left:15%; margin-top: 20px"  class="shadow-lg p-3 mb-5 bg-white rounded">
+
+    <form method="get" action="{{url('/editSurvey/recreate')}}">
+        @csrf
+        <input type="hidden" id="SurveyName" name="name" value="{{$name}}">
+        <input type="hidden" id="SurveyName" name="message" value="Deletion Cancelled">
+
+        <input type="image" name="imgbtn" style="margin-left: 1207px; margin-top: -19px; width: 50px; height: 50px"
+               src="{{asset('assets/images/cancelRed.png')}}"  alt="Tool Tip">
+    </form>
+
 <form name="surveyForm" method="post" action="{{url('/delete')}}" style="margin-left: 0px">
     <br style="line-height:100;">
 
     @csrf
     <input type="hidden" id="SurveyName" name="SurveyName" value="{{$name}}">
     <input type="hidden" id="QuestionIndex" name="QuestionIndex" value="{{$questionIndex}}">
-    <div style="width: 1270px; margin-left:15%;" class="shadow-lg p-3 mb-5 bg-white rounded">
 
         @foreach ($questions as $q)
             <p class="h5"> {{str_replace("|",".",$q["Text"])}}</p> <!--Display the question-->

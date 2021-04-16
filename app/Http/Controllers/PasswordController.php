@@ -68,12 +68,12 @@ class PasswordController extends Controller
 
         //iterate over each returned element in the form, and check whether this patient was accepted or removed
         foreach ($submittedData as $key => $value) {
-            $email = explode(" ", $key)[2];
+            $email = substr(explode(" (", $key)[1],0,-1);
             if ($value == "Accept") {
-                $accepted[] = substr($email, 1, -1);
+                $accepted[] = $email;
 
             } else {
-                $removed[] = substr($email, 1, -1);
+                $removed[] = $email;
             }
         }
 
@@ -94,7 +94,7 @@ class PasswordController extends Controller
             Patient::where('email', $removedEmail)->update(array('PasswordReset' => "false"));
         }
 
-        return redirect('/')->with('message', 'Resets Successful. Emails with temporary passwords sent to patients.');
+        return redirect('/');
     }
 
     public function patientchange(){
