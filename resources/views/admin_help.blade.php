@@ -59,9 +59,7 @@
                 <li><a href="#add">Add a Question</a></li>
                 <li><a href="#survey">Fill Out a Survey</a></li>
                 <li><a href="#generate">Generate a Report of the Responses</a></li>
-                <li><a href="#profile">View a Patient's Profile</a></li>
-                <li><a href="#registerAdmin">Register a New Admin</a></li>
-                <li><a href="#changePassword">Change Your Password</a></li>
+                <li><a href="#profile">View a Patient's Profile</a></li>                
                 <li><a href="#accept">Accept New Patients</a></li>
                 <li><a href="#password">Accept Password Reset Requests</a></li>
             </ul>
@@ -73,8 +71,24 @@
 
                 <h4 style="margin-top: 30px; color:seagreen" id="create">Create a New Survey</h4><br>
                 <h6>
-                    Steps:
-                </h6>
+                    Feature Prerequisites: A logged in Administrator. <br><br>
+
+                    Step 1) To create a new survey a logged in Adminstrator must select the option Create New Survey 
+                    from either either the right-hand sidebar or the dashboard options in the middle of the Administrator
+                    Dashboard.   <br><br>
+
+                    Step 2) The Administrator is then served a page that will allow them to fill in infomration regarding
+                    the new survey. The Administrator must choose a name for this new survey as well as the condition it serves and
+                    a survey type from either PREM or PROM. If a Survey is a PHysician only survey select Phyisician Survey from the dropdown.
+                    This will create a survey that is only completealbe by an Administrator.                
+                    <br><br>
+
+                    Step 3) Once details are filled in the Administrator can click on the Create button under the form to send the request to
+                    the database. Once complete the user will be returned to the Dashboard with the message "New survey has been created successfully."
+                    br><br>
+
+                    Step 4) To populate the newly created survey with questions you may use the Modify a Survey Feature explained below.
+                    </h6>
                 <br><br>
 
                 <h4 style="margin-top: 30px; color:seagreen" id="modify">Modify a Survey</h4><br>
@@ -87,7 +101,7 @@
 
                     Step 2) The Administrator is then served a page that will allow them to select a survey name
                     from a list of the existing surveys that are served by the application. The administrator can
-                    select a survey modification from this list. <br><br>
+                    select a survey to modify from this list. <br><br>
 
                     Step 3) At this step the Administrator will be presented with a page to select the modification
                     they would like to make. They will see the current state of the survey and be able to complete
@@ -130,33 +144,79 @@
 
                 <h4 style="margin-top: 30px; color:seagreen" id="survey">Fill Out a Survey</h4><br>
                 <h6>
-                    Steps:
+                    Feature Prerequisites: A logged in Administrator. <br><br>
+
+                    Step 1) To fill out a survey a logged in Administrator must select the option Fill Out Survey from
+                    either the right-hand sidebar or the dashboard options in the middle of the Administrator
+                    Dashboard.<br><br>
+
+                    Step 2) The Administrator is then served a page that will allow them to select a survey name
+                    from a list of the existing surveys that are served by the application. The administrator can
+                    select a survey to complete from this page.
+                    <br><br>
+                    Note: Surveys listed with "(Physician)" at the end of the survey name are surveys that are to be completed by
+                    Administrators only and cannot be seen by logged in patients to complete. These would be the type of surveys that
+                    are to be completed with the Administrator. Surveys without this in their names are viewable by logged in patients
+                    with the condition served by the survey and can be either completed themselves or by the Administaror.
+                    <br><br>
+
+                    Step 3) At this step the Administrator will be presented with the questions in the survey starting with needing to
+                    identify the patients email that the survey is being completed for. After entering resonses to questions the Adminstrator can hit
+                    the Submit button to Submit the survey responses to the database. At this point the Adminstrator will be redirected back to the dashboard
+                    with a message: "Responses have been saved successfully.""
+                    <br><br>
+                    Note: Surveys can only be completed by a given patient once per day. If there is already a response for a given survey name on that day
+                    you will be redirected to the dashboard with the error message: "Responses were not saved. Patients cannot resubmit the survey on the same day."
+                    Also if there is not a registered patient with the provided email you will be redirected to the dashboard with the error message:
+                    "Survey was not saved. The provided email address does not match any patients."                    
+                    
                 </h6>
                 <br><br>
 
                 <h4 style="margin-top: 30px; color:seagreen" id="generate">Generate a Report of the Responses</h4><br>
                 <h6>
-                    Steps:
+                    Feature Prerequisites: A logged in Administrator. <br><br>
+
+                    Step 1) To generate a report of survey responses a logged in Administrator must select the option Generate Report from
+                    either the right-hand sidebar or the dashboard options in the middle of the Administrator
+                    Dashboard. <br><br>
+
+                    Step 2) The Administrator is then served a page that will allow them to select a survey name
+                    from a list of the existing surveys that are served by the application. There are also options to customize
+                    the contents of the report. THey will be able to narrow down the reports scope by factors upon the patients profile.
+                    They will be able to select to customize the report based on: Gender, Age, Weight, Height, and any medications. <br><br>
+
+                    Step 3) After selected the desired options the Adminisrator will confirm their report request by hitting the submit button.
+                    The application will poll the responses for the survey name in question and generate a table as well as a CSV file that the Administrator can download
+                    to their local system. <br><br>
+
+                    Note: If there is no patients that match the specified criteria the page will refresh with the message. "No records match the specified data."
+                    If the Administrator selects to not save a generated report locally generated reports are also saved in the applications storage located.
+                    in .\PatientExperienceTracker\Storage\app. These reports will be timestamped with their creation time.
+
                 </h6>
                 <br><br>
 
                 <h4 style="margin-top: 30px; color:seagreen" id="profile">View a Patient's Profile</h4><br>
                 <h6>
-                    Steps:
-                </h6>
-                <br><br>
+                    Feature Prerequisites: A logged in Administrator <br><br>
 
-                <h4 style="margin-top: 30px; color:seagreen" id="registerAdmin">Register a New Admin</h4><br>
-                <h6>
-                    Steps:
-                </h6>
-                <br><br>
+                    Step 1) To view a profile summary for a patient a logged in Administrator must select the option View Patient Prorfile/Summary from
+                    either the right-hand sidebar or the dashboard options in the middle of the Administrator
+                    Dashboard. <br><br>
 
-                <h4 style="margin-top: 30px; color:seagreen" id="changePassword">Change Your Password</h4><br>
-                <h6>
-                    Steps:
+                    Step 2) The Administrator is then served a page that will allow them to search for a patient in one of two ways.
+                    If they know the email they can search by email which will load the patients profile if one exists for the supplied email If one does not
+                    the page will reload with the message "No records match the specified data." A Administrator may also choose to serach by first and/or
+                    last name. If they search by name and there exists patients that match the criteria the Administrator will be directed to a page containing
+                    a table with the list of profiles with the combination of first and last name specified On this page selecting view profile for the profile they
+                    wish to view will direct to the summary page for the selected patient. <br><br>
+
+                    Step 3) On the Sumary page the Administrator may view the summary of the paitent data as well as view any completed surveys. If the Administrator would
+                    like to view reponses to a survey they may click on the View Survey button supplied within each row of the repsonses table. This will load a page to view
+                    the responses for that survey.
                 </h6>
-                <br><br>
+                <br><br>                
 
                 <h4 style="margin-top: 30px; color:seagreen" id="accept">Accept New Patients</h4><br>
                 <h6>
@@ -271,6 +331,34 @@
                               href="{{ url('/editSurveySelect')}}">
                                 <img src="{{asset('assets/images/survey.png')}}" width="25" height="25"
                                      class="d-inline-block align-right"> Modify a Survey</a></p>
+                    </li>
+
+                    <li class="nav-item">
+                        <p><a class="text-dark nav-link active" aria-current="page"
+                              href="{{ url('/adminsurveyselection')}}">
+                                <img src="{{asset('assets/images/survey.png')}}" width="25" height="25"
+                                     class="d-inline-block align-right"> Fill Out Survey</a></p>
+                    </li>
+
+                    <li class="nav-item">
+                        <p><a class="text-dark nav-link active" aria-current="page"
+                              href="{{ url('/medication')}}">
+                                <img src="{{asset('assets/images/medication.png')}}" width="25" height="25"
+                                     class="d-inline-block align-right"> Add Medication</a></p>
+                    </li>
+
+                    <li class="nav-item">
+                        <p><a class="text-dark nav-link active" aria-current="page"
+                              href="{{ url('/condition')}}">
+                                <img src="{{asset('assets/images/clinic.png')}}" width="25" height="25"
+                                     class="d-inline-block align-right"> Add Clinic</a></p>
+                    </li>
+
+                    <li class="nav-item">
+                        <p><a class="text-dark nav-link active" aria-current="page"
+                              href="{{ url('/adminhelp')}}">
+                                <img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25"
+                                     class="d-inline-block align-right"> Admin Help</a></p>
                     </li>
 
 

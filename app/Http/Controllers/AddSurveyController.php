@@ -47,13 +47,22 @@ class AddSurveyController extends Controller
             'SurveyName' => 'required',
             'ConditionServed' => 'required',
             'SurveyType' => 'required',
-        ]);
+        ]);     
 
-        //a list of two questions to be stored as dummy questions in the new survey
+        
+        $ifAdmin = '';
+
+        if($request->input('ConditionServed') === 'Admin')
+        {
+            $ifAdmin = ' (Physician)';
+        }
+
+
+        //a question to be stored as a dummy question in the new survey
         $testQuestions = array(array('Text' => 'Text for test question 1', 'Type' => 'DropDown', 'PossibleResponses' => 'Option1,Option2,Option3,Option4'));
 
         $num = DB::table('SURVEY_QUESTIONS')
-            ->where('SurveyName', 'LIKE', $request->input('SurveyName'))->count();
+            ->where('SurveyName', 'LIKE', $request->input('SurveyName') . $ifAdmin)->count();
 
 
         if ($num > 0) {
@@ -69,7 +78,7 @@ class AddSurveyController extends Controller
         }
 
         DB::table('SURVEY_QUESTIONS')->insert([
-            'SurveyName' => $request->input('SurveyName'),
+            'SurveyName' => $request->input('SurveyName') . $ifAdmin,
             'ConditionServed' => $request->input('ConditionServed'),
             'SurveyType' => $request->input('SurveyType'),
             'SurveyQuestions' => json_encode($testQuestions)

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>PREM Survey</title>
+    <title>Survey</title>
     <link href="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css')}}"
           rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -21,7 +21,7 @@
 <body>
 
 <div style=" margin-top:1cm; margin-left:10%">
-    <p class="text-center h2">{{$name}} Survey</p>
+    <p class="text-center h2">{{$name}}</p>
     <p style="text-align:center; color:red">Please fill out the form correctly and press Submit</p>
 </div>
 

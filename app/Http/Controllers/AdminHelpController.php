@@ -8,12 +8,10 @@ class AdminHelpController extends Controller
 {
     public function index()
     {
-//        if (!Auth::guard('admin')->check()) {
-//            if (Auth::guard('patient')->check()) {
-//                return redirect('/');
-//            }
+        if (!Auth::guard('admin')->check()) {//            
+               return redirect('/');
+        }
+
         return view('admin_help');
-//        }
-//    }
     }
 }

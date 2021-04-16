@@ -188,28 +188,7 @@ class DB_Seed extends Seeder
                           array('Text' => 'On a scale of 1-10 how much would you agree with the following statement:'
                                   .' In the last week, because of my Crohn' . "'s". ' disease or ulcerative colitis I have had pain in the joints of my body.' , 'Type' => 'DropDown' , 'PossibleResponses' => '0 - Do not agree,1,2,3,4,5 - Neither agree or disagree,6,7,8,9,10 - Absolutely Agree'),
                     );
-
-        $QOLquestions = array(array('Text' => 'How frequent have your bowel movements been during the last two weeks?'
-                                     , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - More frequent than they have ever been,2 - Extremely frequent,3 - Very frequent,4 - Moderate increase in frequency,5 - Some increase in frequency,6 - Slight increase in frequency,7 - Normal or no increase in frequency'),
-                          array('Text' => 'How often has the feeling of fatigue or of being tired and worn out been a problem for you during the last 2 weeks?'
-                                     , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - More frequent than I have ever experienced,2 - Extremely frequent,3 - Very frequent,4 - Moderately frequent,5 - Now and then,6 - Infrequently,7 - No more than normal'),
-                          array('Text' => 'How often during the past two weeks have you felt frustrated, impatient, or restless because of your bowel problem?'
-                                     , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - More often than ever before,2 - Extremely often,3 - Very often,4 - Somewhat often,5 - Slightly often, 6 - Infrequently,7 - Never'),
-                          array('Text' => 'How often during the last 2 weeks have you been unable to attend school or work due to your bowel problem?'
-                                     , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - Higher than 8 days,2 - 6 or 7 days, 3 - 4 or 5 days  ,4 - 2 or 3 days,5 - 1 day,6 - Partial day,7 - No missed attendance'),
-                          array('Text' => 'How often of the time during the last 2 weeks have your bowel movements been loose?'
-                                     , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - More frequent than ever experienced,2 - Extremely frequent,3 - Very frequent,4 - Moderately frequent,5 - Some frequency,6 - Slightly frequent,7 - Never'),
-                          array('Text' => 'On a scale of 1-10 how much would you agree with the following statement:'
-                                     , 'Type' => 'DropDown' , 'PossibleResponses' => '1 - '),
-                          array('Text' => 'On a scale of 1-10 how much would you agree with the following statement:'
-                                    .' In the last week, because of my Crohn' . "'s". ' disease or ulcerative colitis I have felt sad,low or depressed, and/or worried or anxious.' , 'Type' => 'DropDown' , 'PossibleResponses' => '0,1,2,3,4,5,6,7,8,9,10'),
-                          array('Text' => 'On a scale of 1-10 how much would you agree with the following statement:'
-                                    .' In the last week, because of my Crohn' . "'s". ' disease or ulcerative colitis I have not like the way my body or body parts look.' , 'Type' => 'DropDown' , 'PossibleResponses' => '0,1,2,3,4,5,6,7,8,9,10'),
-                          array('Text' => 'On a scale of 1-10 how much would you agree with the following statement:'
-                                    .' In the last week, because of my Crohn' . "'s". ' disease or ulcerative colitis I have had difficulty with the mental and/or physical aspects of sex.' , 'Type' => 'DropDown' , 'PossibleResponses' => '0,1,2,3,4,5,6,7,8,9,10'),
-                          array('Text' => 'On a scale of 1-10 how much would you agree with the following statement:'
-                                .' In the last week, because of my Crohn' . "'s". ' disease or ulcerative colitis I have had pain in the joints of my body.' , 'Type' => 'DropDown' , 'PossibleResponses' => '0,1,2,3,4,5,6,7,8,9,10'),
-                        );
+    
 
         $GADquestions = array(array('Text' => 'Over the past 2 weeks how often have you felt nervous, anxious, or on edge?'
                                      , 'Type' => 'DropDown' , 'PossibleResponses' => 'Not at all sure,Several days,Over half the days,Nearly every day'),
@@ -340,15 +319,7 @@ class DB_Seed extends Seeder
             'ConditionServed' => 'IBD',
             'SurveyType' => 'PROM',
             'SurveyQuestions' => json_encode($GNOSHquestions)
-        ]);
-
-        //Commented waiting on reply from Angela for proper scales.
-        //DB::table('SURVEY_QUESTIONS')->insert([
-        //    'SurveyName' => 'Quality of Life in IBD Survey',
-        //    'ConditionServed' => 'IBD',
-        //    'SurveyType' => 'PROM',
-        //    'SurveyQuestions' => json_encode($QOLquestions)
-        //]);
+        ]);       
 
         DB::table('SURVEY_QUESTIONS')->insert([
             'SurveyName' => 'Generalized Anxiety Survey',

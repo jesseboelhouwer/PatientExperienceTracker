@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html>
+    <?php echo
+    header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+    header("Cache-Control: post-check=0, pre-check=0", false);
+    header("Pragma: no-cache");
+    header('Content-Type: text/html');?>
 <head>
     <title>Admin Dashboard</title>
     <link href="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css')}}"
@@ -170,6 +175,33 @@
                                 <img src="{{asset('assets/images/survey.png')}}" width="25" height="25" class="d-inline-block align-right"> Modify a Survey</a></p>
                     </li>
 
+                    <li class="nav-item">
+                        <p><a class="text-dark nav-link active" aria-current="page"
+                              href="{{ url('/adminsurveyselection')}}">
+                                <img src="{{asset('assets/images/survey.png')}}" width="25" height="25"
+                                     class="d-inline-block align-right"> Fill Out Survey</a></p>
+                    </li>
+
+                    <li class="nav-item">
+                        <p><a class="text-dark nav-link active" aria-current="page"
+                              href="{{ url('/medication')}}">
+                                <img src="{{asset('assets/images/medication.png')}}" width="25" height="25"
+                                     class="d-inline-block align-right"> Add Medication</a></p>
+                    </li>
+
+                    <li class="nav-item">
+                        <p><a class="text-dark nav-link active" aria-current="page"
+                              href="{{ url('/condition')}}">
+                                <img src="{{asset('assets/images/clinic.png')}}" width="25" height="25"
+                                     class="d-inline-block align-right"> Add Clinic</a></p>
+                    </li>
+
+                    <li class="nav-item">
+                        <p><a class="text-dark nav-link active" aria-current="page"
+                              href="{{ url('/adminhelp')}}">
+                                <img src="{{asset('assets/images/questionmark.png')}}" width="25" height="25"
+                                     class="d-inline-block align-right"> Admin Help</a></p>
+                    </li>
 
                     <!--Logout Option-->
                     <li class="nav-item">
