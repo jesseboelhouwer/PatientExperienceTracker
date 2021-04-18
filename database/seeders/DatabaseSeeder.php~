@@ -7,70 +7,30 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
 
-class DB_Seed extends Seeder
+class DatabaseSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Seed the application's database.
      *
      * @return void
      */
     public function run()
     {
         DB::table('ADMIN_PROFILE')->insert([
-            'email' => 'jboelhouwer@upei.ca',
-            'password' => Hash::make('jessePass'),
-            'FirstName' => 'Jesse',
-            'LastName' => 'Boelhouwer',
+            'email' => 'wmontelpare@upei.ca',
+            'password' => Hash::make('williamPass'),
+            'FirstName' => 'William',
+            'LastName' => 'Montelpare',
             'RootAdmin' => true
         ]);
 
         DB::table('ADMIN_PROFILE')->insert([
-            'email' => 'mrahman2@upei.ca',
-            'password' => Hash::make('minhajPass'),
-            'FirstName' => 'Minhajur',
-            'LastName' => 'Rahman',
+            'email' => 'anriveroll@upei.ca',
+            'password' => Hash::make('angelaPass'),
+            'FirstName' => 'Angela',
+            'LastName' => 'Riveroll',
             'RootAdmin' => true
-        ]);
-
-        DB::table('ADMIN_PROFILE')->insert([
-            'email' => 'shindawi@upei.ca',
-            'password' => Hash::make('saraPass'),
-            'FirstName' => 'Sara',
-            'LastName' => 'Hindawi',
-            'RootAdmin' => true
-        ]);
-
-        DB::table('ADMIN_PROFILE')->insert([
-            'email' => 'nmayaleh@upei.ca',
-            'password' => Hash::make('nairouzPass'),
-            'FirstName' => 'Nairouz',
-            'LastName' => 'Mayaleh',
-            'RootAdmin' => true
-        ]);
-
-        DB::table('ADMIN_PROFILE')->insert([
-            'email' => 'mmayaleh@upei.ca',
-            'password' => Hash::make('majdPass'),
-            'FirstName' => 'Majd',
-            'LastName' => 'Mayaleh',
-            'RootAdmin' => true
-        ]);
-
-        DB::table('ADMIN_PROFILE')->insert([
-            'email' => 'jsethdavid@upei.ca ',
-            'password' => Hash::make('jessiePass'),
-            'FirstName' => 'Jessie',
-            'LastName' => 'Sethdavid',
-            'RootAdmin' => true
-        ]);
-
-        DB::table('ADMIN_PROFILE')->insert([
-            'email' => 'testadmin@test.ca',
-            'password' => Hash::make('adminPass'),
-            'FirstName' => 'TestAdminFirst',
-            'LastName' => 'TestAdminLast',
-            'RootAdmin' => false
-        ]);
+        ]);        
 
         DB::table('CONDITION_LIST')->insert([
             'Condition' => 'IBD'
@@ -132,108 +92,7 @@ class DB_Seed extends Seeder
         DB::table('MEDICATION_LIST')->insert([
             'MedicationName' => 'Tofacitinib'
         ]);
-
-       DB::table('PATIENT_PROFILE')->insert([
-            'email' => 'jboelhouwer@upei.ca',
-            'password' => Hash::make('jessePass'),
-            'FirstName' => 'Jesse',
-            'LastName' => 'Boelhouwer',
-            'DOB' => date_create("12-10-1991"),
-            'Gender' => 'Male',
-            'Weight' => 265,
-            'Height' => 178,
-            'Condition' =>'IBD',
-            'Medications' => json_encode(array('Biosimilars')),
-            'PREMFlag' => true,
-            'PROMFlag' => true,
-            'NewAccount' => false,
-            'PasswordReset' => "false",
-        ]);
-
-        DB::table('PATIENT_PROFILE')->insert([
-            'email' => 'shindawi@upei.ca',
-            'password' => Hash::make('saraPass'),
-            'FirstName' => 'Sara',
-            'LastName' => 'Hindawi',
-            'DOB' => date_create("01-01-1990"),
-            'Gender' => 'Female',
-            'Weight' => 160,
-            'Height' => 160,
-            'Condition' =>'IBD',
-            'Medications' => json_encode(array('Tofacitinib')),
-            'PREMFlag' => true,
-            'PROMFlag' => true,
-            'NewAccount' => false,
-            'PasswordReset' => "false",
-        ]); 
         
-        DB::table('PATIENT_PROFILE')->insert([
-            'email' => 'mrahman2@upei.ca',
-            'password' => Hash::make('minhajPass'),
-            'FirstName' => 'Minhajur',
-            'LastName' => 'Rahman',
-            'DOB' => date_create("01-01-1990"),
-            'Gender' => 'Male',
-            'Weight' => 200,
-            'Height' => 175,
-            'Condition' =>'IBD',
-            'Medications' => json_encode(array('Tofacitinib')),
-            'PREMFlag' => true,
-            'PROMFlag' => true,
-            'NewAccount' => false,
-            'PasswordReset' => "false",
-        ]);
-
-        DB::table('PATIENT_PROFILE')->insert([
-            'email' => 'mmayaleh@upei.ca',
-            'password' => Hash::make('majdPass'),
-            'FirstName' => 'Majd',
-            'LastName' => 'Mayaleh',
-            'DOB' => date_create("01-01-1990"),
-            'Gender' => 'Male',
-            'Weight' => 215,
-            'Height' => 180,
-            'Condition' =>'IBD',
-            'Medications' => json_encode(array('Tofacitinib')),
-            'PREMFlag' => true,
-            'PROMFlag' => true,
-            'NewAccount' => false,
-            'PasswordReset' => "false",
-        ]);
-
-        DB::table('PATIENT_PROFILE')->insert([
-            'email' => 'nmayaleh@upei.ca',
-            'password' => Hash::make('majdPass'),
-            'FirstName' => 'Nairouz',
-            'LastName' => 'Mayaleh',
-            'DOB' => date_create("01-01-1990"),
-            'Gender' => 'Female',
-            'Weight' => 150,
-            'Height' => 175,
-            'Condition' =>'IBD',
-            'Medications' => json_encode(array('Tofacitinib')),
-            'PREMFlag' => true,
-            'PROMFlag' => true,
-            'NewAccount' => false,
-            'PasswordReset' => "false",
-        ]);
-
-        DB::table('PATIENT_PROFILE')->insert([
-            'email' => 'unknown@mystery.ca',
-            'password' => Hash::make('testPass'),
-            'FirstName' => 'John',
-            'LastName' => 'Doe',
-            'DOB' => date_create("01-01-1990"),
-            'Gender' => 'Male',
-            'Weight' => 150,
-            'Height' => 175,
-            'Condition' =>'IBD',
-            'Medications' => json_encode(array('Tofacitinib')),
-            'PREMFlag' => true,
-            'PROMFlag' => true,
-            'NewAccount' => true,
-            'PasswordReset' => "false",
-        ]);
 
         $GNOSHquestions = array(array('Text' => 'On a scale of 1-10 how much would you agree with the following statement:'
                                   .'In the last week, because of my Crohn' . "'s". ' disease or ulcerative colitis I have had aches in my stomach or abdomen.' , 'Type' => 'DropDown' , 'PossibleResponses' => '0 - Do not agree,1,2,3,4,5 - Neither agree or disagree,6,7,8,9,10 - Absolutely Agree'),
@@ -377,7 +236,7 @@ class DB_Seed extends Seeder
                           array('Text' => 'Indicate whether there is an abdominal mass present?'
                                      , 'Type' => 'DropDown' , 'PossibleResponses' => '0 - None,1 - Dubious,2 - Definite,3 - Definite and Tender'),
                           array('Text' => 'Select any of the below complications that apply(Score 1 per item)?'
-                                     , 'Type' => 'CheckBox' , 'PossibleResponses' => 'Arthralgian,Uveitis,Erythema,Nodosum,Apthous Ulcers,Pyoderma Ganrenosm,Anal Fissure,New Fistula,Abscess'),
+                                     , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Arthralgian,Uveitis,Erythema,Nodosum,Apthous Ulcers,Pyoderma Ganrenosm,Anal Fissure,New Fistula,Abscess'),
                           array('Text' => 'Total Score'
                                      , 'Type' => 'FreeText' , 'PossibleResponses' => ''),
                         );

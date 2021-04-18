@@ -26,10 +26,7 @@
 <body>
 <div id="wrapper">
 
-    @if(Session::has('message'))
-        <p class="alert alert-info"
-           style="text-align:center; width:94.6%; height: 40px; margin-left: 110px">{{ Session::get('message') }}</p>
-    @endif
+
 
     <section class="container-fluid" style="margin-top: .5cm">
         <!-- the title in the top middle of the page -->
@@ -97,9 +94,11 @@
                     <input type="hidden" id="height" name="height" value="{{$height}}">
                     <input type="hidden" id="gender" name="gender" value="{{$gender}}">
                     <input type="hidden" id="condition" name="condition" value="{{$condition}}">
+                    @if(Session::has('medication'))
                     @foreach ($medication as $m)
                         <input type="hidden" name="medication[]" value="{{$m}}" id="medication">
                     @endforeach
+                    @endif
                     <input type="hidden" id="verificationCode" name="verificationCode" value="{{$verificationCode}}">
                     <!-- box for Code-->
                     <div class="mb-3">

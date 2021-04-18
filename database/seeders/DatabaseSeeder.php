@@ -225,7 +225,7 @@ class DatabaseSeeder extends Seeder
                                      , 'Type' => 'DropDown' , 'PossibleResponses' => '0 - Worst Possible Control,1,2,3,4,5 - Neither agree or disagree,6,7,8,9,10 - Best Possible Control'),
                         );
 
-        $HBquestions = array(array('Text' => 'Indicate Nisit No.'
+        $HBquestions = array(array('Text' => 'Indicate visit No.'
                                     , 'Type' => 'DropDown' , 'PossibleResponses' => 'One,Two,Three'),
                           array('Text' => 'Rate the general well-being of the patient?'
                                      , 'Type' => 'DropDown' , 'PossibleResponses' => '0 - Very well,1 - Slightly below par,2 - Poor,3 - Very poor,4 - Terrible'),
@@ -236,7 +236,7 @@ class DatabaseSeeder extends Seeder
                           array('Text' => 'Indicate whether there is an abdominal mass present?'
                                      , 'Type' => 'DropDown' , 'PossibleResponses' => '0 - None,1 - Dubious,2 - Definite,3 - Definite and Tender'),
                           array('Text' => 'Select any of the below complications that apply(Score 1 per item)?'
-                                     , 'Type' => 'CheckBox' , 'PossibleResponses' => 'Arthralgian,Uveitis,Erythema,Nodosum,Apthous Ulcers,Pyoderma Ganrenosm,Anal Fissure,New Fistula,Abscess'),
+                                     , 'Type' => 'Checkbox' , 'PossibleResponses' => 'Arthralgian,Uveitis,Erythema,Nodosum,Apthous Ulcers,Pyoderma Ganrenosm,Anal Fissure,New Fistula,Abscess'),
                           array('Text' => 'Total Score'
                                      , 'Type' => 'FreeText' , 'PossibleResponses' => ''),
                         );

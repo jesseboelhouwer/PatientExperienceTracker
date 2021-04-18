@@ -191,7 +191,7 @@ class PasswordController extends Controller
     $currentEmail = $currentUser->email;
 
     if(!Auth::guard('admin')->validate(['email' => $currentEmail , 'password' => $request->input('currentpass')])){
-        return redirect('/passwordchangepatient')->with('message', 'Current Password is incorrect.');
+        return redirect('/passwordchangeadmin')->with('message', 'Current Password is incorrect.');
     }
 
     $currentUser->password = Hash::make($request->input('password'));

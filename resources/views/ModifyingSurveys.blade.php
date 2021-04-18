@@ -221,7 +221,7 @@
             <select style=" width: 200px" class="shadow  bg-body rounded" id="qType" name="qType">
                 <option value="FreeText" selected>FreeText</option>
                 <option value="DropDown">DropDown</option>
-                <option value="Checkbox">Checkbox</option>
+                <option value="CheckBox">Checkbox</option>
                 <option value="RadioButtons">RadioButtons</option>
             </select>
             <div style="width: 400px; margin-left:70%; margin-top:-8%; height: 20px;">

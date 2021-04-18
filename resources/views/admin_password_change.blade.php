@@ -24,7 +24,7 @@
     <!-- the body has the content of the page  -->
     <body>
     @if(Session::has('message'))
-        <p class="alert alert-info" style="text-align:center; margin-top: -1cm">{{ Session::get('message') }}</p>
+        <p class="alert alert-info" style="text-align:center; width: 94%; margin-left:110px">{{ Session::get('message') }}</p>
     @endif
 
     <div style="margin-left: -1cm; margin-top: 1cm">

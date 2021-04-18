@@ -158,7 +158,7 @@
                     </select>
                     <br> <br>
 
-                @elseif ($q["Type"]  == "Checkbox")
+                @elseif ($q["Type"]  == "")
 
                     <div style="width:77em;word-wrap: break-word">
                         {{--                <input class="form-check-input" type="checkbox" name="{{$q["Text"]}}[]" value="Prefer not to answer" checked>--}}

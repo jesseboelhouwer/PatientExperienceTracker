@@ -73,7 +73,7 @@ class PatientRegistrationController extends Controller
             return view('verification')->with('email', $request->input('email'))->with('password' , $request->input('password'))
             ->with('firstName' , $request->input('firstName'))->with('lastName' , $request->input('lastName'))
             ->with('dob', $request->input('dob'))->with('weight', $request->input('weight'))->with('height', $request->input('height'))
-            ->with('gender', $request->input('gender'))->with('condition', $request->input('condition'))->with('medication', $request->input('medication'))
+            ->with('gender', $request->input('gender'))->with('condition', $request->input('condition'))->with('medication', $request-)
             ->with('verificationCode', $verificationCode)->with('message' , 'Incorrect Verification Code. Please check email.'); 
         }
 
